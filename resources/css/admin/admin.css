@@ -1,0 +1,499 @@
+/* Sidebar - Menu bên trái */
+.sidebar {
+    width: 300px; /* Độ rộng sidebar */
+    min-height: 100vh; /* Full chiều cao */
+    position: fixed; /* Cố định menu bên trái */
+    top: 0;
+    left: 0;
+    background-color: #010105 !important;
+    padding-top: 20px;
+    border-right: 3px solid #444;
+}
+
+/* Menu item */
+.sidebar .nav-link {
+    color: white !important;
+    padding: 25px 15px; /* Giảm padding để sát lề trái */
+    font-size: 18px; /* Tăng kích thước chữ */
+    display: flex;
+    align-items: center; /* Căn giữa icon và chữ */
+    gap: 12px;
+    text-align: left; /* Khoảng cách giữa icon và chữ */
+}
+.sidebar .nav-item {
+    width: 100%;
+}
+
+/* Hover menu */
+.sidebar .nav-link:hover {
+    background-color: #495057;
+    border-radius: 5px; /* Bo góc nhẹ */
+}
+
+/* Tạo hiệu ứng khi mở dropdown */
+.collapse {
+    transition: height 0.3s ease-in-out;
+}
+
+/* Lùi các menu con vào trong */
+.sidebar .collapse .nav-link {
+    padding-left: 40px;
+}
+
+
+/* -------------------------------------------Nội dung chính ------------------------------------------ */
+
+.main-content {
+    margin-left: 300px; /* Đẩy nội dung sang phải, tránh bị đè lên menu */
+    width: calc(100% - 250px); /* Đảm bảo nội dung vừa với màn hình */
+    padding: 20px;
+}
+
+/* --------------------- Toàn bộ trang --------------------- */
+body {
+    background-color: #010105; /* Màu nền tổng thể tối hơn */
+    color: #ffffff; /* Màu chữ chính */
+    font-family: 'Arial', sans-serif; /* Font chữ đẹp hơn */
+}
+
+/* --------------------- Bảng --------------------- */
+.table {
+    border: 2px solid #2b2f36; /* Viền bảng tối hơn */
+    background-color: #2b2f36; /* Màu nền bảng */
+    color: #ffffff; /* Chữ sáng trên nền tối */
+    border-radius: 10px; /* Bo góc bảng */
+    overflow: hidden; /* Ẩn góc tròn khi có border */
+}
+
+/* Header của bảng */
+.table th {
+    background-color: #007bff; /* Nền xanh nổi bật */
+    color: white; /* Chữ trắng */
+    text-transform: uppercase; /* Chữ in hoa */
+    padding: 15px; /* Khoảng cách chữ */
+    font-size: 14px;
+}
+
+/* Ô dữ liệu trong bảng */
+.table td {
+    background-color: #2e333b; /* Nền tối hơn */
+    border: 1px solid #444950; /* Viền mềm mại */
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Hiệu ứng hover khi rê chuột vào hàng */
+.table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Hiệu ứng sáng nhẹ */
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* --------------------- Hình ảnh --------------------- */
+.table td img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #444950; /* Viền nổi bật */
+    transition: transform 0.3s ease-in-out; /* Hiệu ứng phóng to */
+}
+
+/* Phóng to ảnh khi hover */
+.table td img:hover {
+    transform: scale(1.1);
+    border-color: #007bff;
+}
+
+/* --------------------- ComboBox --------------------- */
+/* --------------------- ComboBox --------------------- */
+.form-select {
+    background-color: #2e333b; /* Dark background */
+    color: white; /* White text */
+    border: 2px solid #444950; /* Soft border */
+    border-radius: 6px; /* Rounded corners */
+    padding: 8px; /* Padding inside the select */
+    font-size: 14px; /* Font size */
+    appearance: none; /* Remove default arrow */
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Custom arrow for the select */
+.form-select::after {
+    content: '▼'; /* Custom arrow */
+    position: absolute; /* Positioning */
+    right: 10px; /* Position from the right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for centering */
+    color: white; /* Arrow color */
+    pointer-events: none; /* Prevent interaction */
+}
+
+/* Hiệu ứng hover cho combobox */
+.form-select:hover {
+    border-color: #007bff; /* Change border color on hover */
+    background-color: #3a3f47; /* Slightly lighter background on hover */
+}
+
+/* Hiệu ứng focus cho combobox */
+.form-select:focus {
+    border-color: #007bff; /* Change border color on focus */
+    background-color: #3a3f47; /* Slightly lighter background on focus */
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Add a subtle shadow */
+}
+
+/* --------------------- Nút bấm --------------------- */
+.btn {
+    transition: all 0.3s ease-in-out;
+    font-weight: bold;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+/* Nút sửa */
+.edit-btn {
+    background-color: #ffc107;
+    color: #212529;
+    border: 2px solid #e0a800;
+}
+
+/* Nút xóa */
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    border: 2px solid #c82333;
+}
+
+/* Hiệu ứng hover cho nút */
+.btn:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+
+/* -------------------------------------------Nội dung chính ------------------------------------------ */
+.form-container {
+    max-width: 700px;
+    margin: 50px auto;
+    background-color: #495057;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.form-control, .form-select {
+    background-color: #3d4147;
+    color: white;
+    border: 1px solid #6c757d;
+}
+
+.form-control::placeholder {
+    color: #adb5bd;
+}
+
+/* ===================== QUẢN LÝ VÉ ===================== */
+/* Tiêu đề trang */
+/* Tiêu đề trang */
+.main-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff; /* Màu trắng hoàn toàn */
+    margin-bottom: 20px;
+}
+
+/* Nền chính */
+.main-content {
+    background-color: #1e1e1e; /* Nền tối */
+    color: #fff; /* Chữ trắng */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Bảng danh sách vé */
+.table {
+    background: #2b2b2b; /* Nền bảng tối */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.table tbody td {
+    color: #ffffff !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: normal; /* Chữ trắng hoàn toàn */
+}
+
+.table thead {
+    background: #007bff;
+    color: #fff; /* Chữ trắng */
+    font-weight: bold;
+}
+
+.table tbody tr {
+    color: #fff; /* Chữ trắng */
+    border-bottom: 1px solid #444;
+}
+
+.table tbody tr:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+/* Điều chỉnh chiều rộng cột cho bảng */
+/* Đảm bảo tên dài không bị ẩn */
+.table td:nth-child(2), 
+.table th:nth-child(2) {
+    width: 20%;
+    min-width: 150px;
+    max-width: 250px; /* Giới hạn chiều rộng */
+    word-wrap: break-word;
+    white-space: normal; /* Cho phép chữ xuống hàng */
+}
+
+/* Đảm bảo toàn bộ bảng có thể xuống hàng nếu cần */
+.table td, .table th {
+    word-wrap: break-word;
+    white-space: normal;
+    padding: 10px;
+}
+
+/* Làm rõ đường viền và màu sắc chữ */
+.table tbody td {
+    color: #ffffff !important;
+    font-size: 16px;
+    font-weight: 500;
+    border-bottom: 1px solid #555;
+}
+
+
+/* Bộ lọc tìm kiếm */
+.filter-form {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.filter-form label {
+    font-weight: bold;
+    color: #fff; /* Chữ trắng */
+    margin-right: 5px;
+}
+
+.filter-form select, .filter-form input {
+    border-radius: 5px;
+    padding: 8px;
+    background-color: #333;
+    color: #fff; /* Chữ trắng */
+    border: 1px solid #555;
+}
+
+.filter-form select:focus, .filter-form input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Nút trạng thái */
+.table select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background: #444;
+    color: #fff; /* Chữ trắng */
+    cursor: pointer;
+}
+
+.table select:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Nút hành động */
+.btn-warning {
+    background-color: #ffc107;
+    color: #000; /* Chữ đen để dễ đọc */
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: #fff; /* Chữ trắng */
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff; /* Chữ trắng */
+}
+
+.btn-sm {
+    padding: 5px 10px;
+}
+
+/* Hiệu ứng hover cho nút */
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* Phân trang */
+.pagination {
+    margin-top: 15px;
+    justify-content: center;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff; /* Chữ trắng */
+}
+
+.pagination .page-link {
+    color: #fff; /* Chữ trắng */
+    transition: 0.3s;
+    background: #2b2b2b;
+    border: 1px solid #444;
+}
+
+.pagination .page-link:hover {
+    background-color: #007bff;
+    color: #fff; /* Chữ trắng */
+}
+
+
+/* ================== QUẢN LÝ NGƯỜI DÙNG ================== */
+
+/* Form Thêm Người Dùng */
+.user-form-container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề form */
+.user-form-container h2 {
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Input và Select */
+.user-form-container .form-control {
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Nút gửi */
+.btn-submit {
+    background-color: #007bff;
+    color: white;
+    transition: 0.3s;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Nút Reset */
+.btn-reset {
+    background-color: #dc3545;
+    color: white;
+    transition: 0.3s;
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.btn-reset:hover {
+    background-color: #a71d2a;
+}
+
+
+.user-form-container .form-control {
+    border-radius: 5px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+/* Hiệu ứng khi hover vào các input, select */
+.user-form-container .form-control:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Nhãn của các trường */
+.user-form-container label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* ===================== Thông Báo Lỗi ===================== */
+
+/* Thông báo lỗi */
+.user-form-container .alert {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.user-form-container .alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* ===================== Nút Tùy Chọn Hành Động ===================== */
+
+/* Nút Xóa */
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+    transition: 0.3s;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+/* ===================== Các Thành Phần Khác ===================== */
+
+/* Các thành phần khác (chẳng hạn footer) */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+/* Các nút hành động trong form */
+.btn {
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}

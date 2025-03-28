@@ -1,0 +1,475 @@
+body {
+    background-color: #010105; /* Xanh đậm */
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.navbar {
+    background-color: #010105 !important; /* Đảm bảo header cùng màu với body */
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+}
+
+.quick-booking {
+    background-color: #f0f2ff;
+    padding: 20px;
+    height: 140px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1800px; /* Giới hạn độ rộng */
+    margin: 0 auto; /* Canh giữa */
+}
+
+/* ===== TIÊU ĐỀ "ĐẶT VÉ NHANH" ===== */
+.quick-booking .title {
+    font-size: 26px;
+    font-weight: bold;
+    color: #222;
+    white-space: nowrap; /* Giữ tiêu đề không bị xuống dòng */
+    margin-right: 20px; /* Cách xa phần select */
+}
+
+/* ===== FORM CHỌN ===== */
+.booking-options {
+    display: flex;
+    gap: 10px;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== DROPDOWN CHỌN ===== */
+.form-select {
+    width: 220px;
+    padding: 10px;
+    height: 60px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid #7D3C98;
+    border-radius: 8px;
+    background-color: white;
+    color: #7D3C98;
+    transition: 0.3s ease-in-out;
+}
+
+.form-select:focus {
+    border-color: #5B2C6F;
+    box-shadow: 0px 0px 8px rgba(125, 60, 152, 0.6);
+}
+
+/* ===== NÚT ĐẶT VÉ ===== */
+.btn-purple {
+    background-color: #7D3C98;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+.btn-purple:hover {
+    background-color: #5B2C6F;
+    transform: scale(1.05);
+}
+
+/* Nút đặt vé */
+.btn-yellow {
+    background-color: #ffcc00;
+    color: black;
+    font-weight: bold;
+    width: 100%;
+}
+
+.btn-yellow:hover {
+    background-color: #ff9900;
+    color: white;
+}
+
+/* Phim */
+.movie-card {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background: #1A1D2E;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+/* ==== Hình ảnh phim ==== */
+.movie-image-container {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie-card:hover img {
+    transform: scale(1.1);
+}
+
+/* ==== Nội dung phim ==== */
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    text-align: center;
+    min-height: 180px;
+}
+
+/* ==== Tiêu đề phim ==== */
+.card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    height: 45px;
+    overflow: hidden;
+}
+
+/* ==== Mô tả phim ==== */
+.card-text {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    min-height: 50px;
+    overflow: hidden;
+}
+
+/* ==== Nút "Xem Trailer" & "Đặt Vé" ==== */
+.btn-trailer,
+.btn-ticket {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    white-space:    nowrap;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-trailer {
+    background: #2c3e50;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.btn-trailer:hover {
+    background: white;
+    color: #2c3e50;
+}
+
+.btn-ticket {
+    background: #ffcc00;
+    color: black;
+    border: 2px solid #ffcc00;
+}
+
+.btn-ticket:hover {
+    background: #ff9900;
+    color: white;
+}
+
+/* ==== Hiển thị phim theo hàng ==== */
+.row-cols-md-4 {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các khung xuống dòng nếu không đủ chỗ */
+    justify-content: space-between; /* Căn giữa các khung */
+}
+
+.row-cols-md-4 > .col {
+    flex: 1 1 calc(25% - 20px); /* Chiều rộng 25% với khoảng cách giữa các khung */
+    margin-bottom: 20px; /* Khoảng cách giữa các hàng */
+    max-width: 300px; /* Giới hạn chiều rộng tối đa cho mỗi khung */
+}
+
+/* Đảm bảo các khung có chiều cao bằng nhau */
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Đảm bảo chiều cao 100% */
+}
+
+/* ==== Nút điều hướng carousel ==== */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+/* ===== NÚT "XEM THÊM" ===== */
+#view-more {
+    background: linear-gradient(45deg, #ffcc00, #ff9900);
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+#view-more:hover {
+    background: linear-gradient(45deg, #ff9900, #ff6600);
+    transform: scale(1.05);
+}
+
+/* ===== HIỆU ỨNG FADE-IN KHI XEM THÊM ===== */
+.movie-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Định dạng phần Liên hệ */
+.contact-section {
+    margin-top: 80px; /* Tạo khoảng cách xa hơn với phần trên */
+    margin-bottom: 50px; /* Giữ khoảng cách với footer */
+    background-color: #010105; /* Thêm màu nền cho phần liên hệ */
+    padding: 40px 0; /* Thêm padding cho phần trên và dưới */
+}
+
+/* Căn giữa phần Liên hệ */
+.contact-container {
+    display: flex;
+    justify-content: flex-start; /* Căn trái các phần tử */
+    align-items: flex-start; /* Căn chỉnh phần tử ở đầu */
+    gap: 40px;
+    max-width: 1200px; /* Giới hạn chiều rộng để căn đều */
+    margin: 0 auto; /* Canh giữa */
+}
+
+
+
+/* Phần chứa nút Facebook & Zalo */
+.contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.contact-left h2 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Thay đổi màu chữ cho dễ đọc */
+    transition: color 0.3s ease; /* Thêm hiệu ứng chuyển màu */
+}
+
+.contact-left h2:hover {
+    color: #0077b6; /* Thay đổi màu khi hover */
+}
+
+.btn-facebook, .btn-zalo {
+    width: 100%;
+    padding: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    border: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3); /* Tăng độ bóng cho nút */
+    display: flex; /* Sử dụng flexbox để căn giữa biểu tượng và văn bản */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+}
+
+/* Biểu tượng */
+.btn-facebook i, .btn-zalo i {
+    font-size: 36px; /* Tăng kích thước biểu tượng */
+    margin-right: 10px; /* Khoảng cách giữa biểu tượng và văn bản */
+    transition: transform 0.3s ease; /* Thêm hiệu ứng cho biểu tượng */
+}
+
+/* Nút Facebook */
+.btn-facebook {
+    background: linear-gradient(90deg, #3b5998, #4a69bd);
+}
+
+.btn-facebook:hover {
+    background: linear-gradient(90deg, #2d4373, #3b5998); /* Thay đổi màu gradient khi hover */
+    transform: translateY(-4px); /* Hiệu ứng nhấc lên khi hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4); /* Tăng độ bóng khi hover */
+}
+
+.btn-facebook:hover i {
+    transform: scale(1.1); /* Tăng kích thước biểu tượng khi hover */
+}
+
+/* Nút Zalo */
+.btn-zalo {
+    background: linear-gradient(90deg, #0088cc, #00aaff);
+}
+
+.btn-zalo:hover {
+    background: linear-gradient(90deg, #0077b6, #0088cc); /* Thay đổi màu gradient khi hover */
+    transform: translateY(-4px); /* Hiệu ứng nhấc lên khi hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.4); /* Tăng độ bóng khi hover */
+}
+
+.btn-zalo:hover i {
+    transform: scale(1.1); /* Tăng kích thước biểu tượng khi hover */
+}
+/* Hộp thông tin liên hệ */
+
+.contact-box {
+    background-color: #2556D1;
+    padding: 30px; /* Tăng padding để khung lớn hơn */
+    border-radius: 12px;
+    width: 100%; /* Đặt chiều rộng là 100% để chiếm toàn bộ không gian */
+    max-width: 600px; /* Giới hạn chiều rộng tối đa cho khung */
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Thêm hiệu ứng cho hộp */
+}
+
+.contact-box:hover {
+    transform: scale(1.02); /* Hiệu ứng phóng to khi hover */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Tăng độ bóng khi hover */
+}
+
+.contact-box h4 {
+    font-size: 24px; /* Tăng kích thước tiêu đề */
+    font-weight: bold;
+    margin-bottom: 20px; /* Tăng khoảng cách dưới tiêu đề */
+}
+
+.contact-box ul li {
+    margin-bottom: 10px; /* Tăng khoảng cách giữa các mục */
+    font-size: 18px; /* Tăng kích thước chữ cho các mục */
+}
+
+.contact-box input, .contact-box textarea {
+    width: 100%;
+    padding: 15px; /* Tăng padding cho các trường nhập liệu */
+    border-radius: 6px;
+    border: none;
+    margin-bottom: 15px; /* Tăng khoảng cách dưới các trường nhập liệu */
+    font-size: 18px; /* Tăng kích thước chữ cho các trường nhập liệu */
+}
+
+.contact-box button {
+    width: 100%;
+    padding: 15px; /* Tăng padding cho nút */
+    background-color: yellow;
+    border: none;
+    font-weight: bold;
+    font-size: 20px; /* Tăng kích thước chữ cho nút */
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Thêm hiệu ứng cho nút */
+}
+
+.contact-box button:hover {
+    background-color: #e6b800;
+    transform: translateY(-2px); /* Hiệu ứng nhấc lên khi hover */
+}
+/* ==== Responsive ==== */
+@media (max-width: 1200px) {
+    .row-cols-md-4 {
+        grid-template-columns: repeat(3, 1fr); /* 3 cột trên màn hình nhỏ hơn */
+    }
+}
+
+@media (max-width: 992px) {
+    .row-cols-md-4 {
+        grid-template-columns: repeat(2, 1fr); /* 2 cột trên màn hình nhỏ hơn */
+    }
+}
+
+@media (max-width: 768px) {
+    .row-cols-md-4 {
+        grid-template-columns: 1fr; /* 1 cột trên màn hình nhỏ hơn */
+    }
+
+    .movie-image-container {
+        height: 280px; /* Điều chỉnh chiều cao hình ảnh cho màn hình nhỏ */
+    }
+
+    .card-title {
+        font-size: 1rem; /* Giảm kích thước tiêu đề cho màn hình nhỏ */
+    }
+
+    .card-text {
+        font-size: 0.85rem; /* Giảm kích thước mô tả cho màn hình nhỏ */
+    }
+
+    .btn-trailer,
+    .btn-ticket {
+        padding: 8px 10px; /* Giảm padding cho nút trên màn hình nhỏ */
+    }
+
+    .carousel-control-prev {
+        left: -20px; /* Điều chỉnh vị trí nút điều hướng */
+    }
+
+    .carousel-control-next {
+        right: -20px; /* Điều chỉnh vị trí nút điều hướng */
+    }
+}

@@ -1,0 +1,132 @@
+/* Định dạng chung */
+body {
+    background: #010105;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Khung đăng nhập */
+.login-container {
+    width: 400px;
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+/* Header (Tab chuyển Đăng nhập / Đăng ký) */
+.nav-tabs {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.nav-tabs a {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #010105;
+    transition: 0.3s;
+    border-radius: 5px 5px 0 0;
+}
+
+.nav-tabs a.active {
+    background: white;
+    color: black;
+}
+
+/* Tiêu đề */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* Ô nhập liệu */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 95%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: 0.3s;
+    background: #fff;
+    color: black;
+}
+
+input:focus {
+    border-color: #ffcc00;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(255, 204, 0, 0.8);
+}
+
+/* Checkbox nhớ mật khẩu */
+.remember-me {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.remember-me input {
+    margin-right: 8px;
+}
+
+/* Nút đăng nhập */
+button {
+    width: 100%;
+    background: #ffcc00;
+    border: none;
+    color: black;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #e6b800;
+}
+
+/* Link quên mật khẩu */
+.forgot-password {
+    text-align: right;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .login-container {
+        width: 90%;
+    }
+}

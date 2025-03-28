@@ -1,0 +1,205 @@
+body {
+    background-color: #0C0C0C;
+    color: #fff;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+/* ---------- Chi tiết phim ---------- */
+.movie-detail-container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.movie-poster {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.movie-poster:hover {
+    transform: scale(1.05);
+}
+
+.movie-info h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: #FFC107;
+}
+
+.movie-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 24px;
+    padding: 20px 0;
+}
+
+.movie-info ul li {
+    font-size: 1.4rem;
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.movie-info ul li i {
+    color: #00BFFF;
+}
+
+.movie-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* ---------- Trailer ---------- */
+.btn-trailer {
+    background-color: #FF4D00;
+    /* Màu cam nổi bật */
+    color: #fff;
+    padding: 16px 32px;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 8px 20px rgba(255, 77, 0, 0.25);
+}
+
+.btn-trailer:hover {
+    background-color: #e04300;
+    /* Màu cam đậm hơn khi hover */
+    transform: translateY(-4px);
+    /* Nâng nút lên khi hover */
+    box-shadow: 0 12px 30px rgba(255, 77, 0, 0.4);
+    /* Hiệu ứng shadow mạnh hơn */
+}
+
+/* ---------- Booking Form ---------- */
+.booking-form {
+    background-color: #1f1f1f;
+    border-radius: 16px;
+    padding: 32px;
+    margin-top: 50px;
+    border: 1px solid #333;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.04);
+}
+
+.booking-form h5 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 28px;
+    color: #ffc107;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.booking-form .form-label {
+    color: #ccc;
+    font-weight: 500;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.booking-form .form-select {
+    background-color: #121212;
+    color: #fff;
+    border: 1px solid #555;
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-size: 1.1rem;
+}
+
+.booking-form .form-select:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+/* ---------- Gạch nối dài giữa các ô ---------- */
+/* .booking-form .divider-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.booking-form .divider-line {
+    width: 800px;
+    height: 1px;
+    background-color: #ffc107;
+    border-radius: 2px;
+    margin: 0 10px;
+    opacity: 0.8;
+}
+
+/* ---------- Button ---------- */
+.booking-form .btn-warning {
+    background-color: #ffc107;
+    color: #000;
+    font-weight: bold;
+    padding: 14px 30px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.booking-form .btn-warning:hover {
+    background-color: #e0a800;
+    color: #fff;
+}
+
+#error-message {
+    display: none;
+}
+
+#error-message.d-block {
+    display: block;
+    color: red;
+    font-weight: bold;
+}
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .movie-info h1 {
+        font-size: 1.8rem;
+    }
+
+    .movie-info ul li,
+    .movie-description {
+        font-size: 1rem;
+    }
+
+    .booking-form {
+        padding: 20px;
+    }
+
+    .booking-form .btn-warning {
+        font-size: 1rem;
+    }
+
+    .booking-form .divider-line {
+        display: none;
+    }
+}
